@@ -12,8 +12,8 @@ const protectedData = 'This is some private content.......<br><br>Lorem ipsum do
 const SECRET = 'jcndsiuhcdsiuchsdiuchdisucdis';
 const message = 'Only sign this message for NFT Gateway POC.';
 
-const rpc = 'https://data-seed-prebsc-1-s1.binance.org:8545';
-const nft = '0x0FEC56033F344A07A71Ce7861Ea00b2C3A9e4990'; // NFT contract address
+const rpc = 'https://eth-goerli.g.alchemy.com/v2/demo';
+const nft = '0xa535aa57e80f64fee5d2b30c4a3d5e505271cad2'; // NFT contract address
 
 const tokenExpiry = '15m';
 const balanceRequired = 0;
@@ -74,7 +74,7 @@ app.post('/api/verify', (req, res) => {
         if (error) return res.status(500).send('Problem communicating with ethereum');
         if (parseFloat(result) > balanceRequired)
             jwt.sign(req.body, SECRET, { expiresIn: tokenExpiry }, (e, token) => {
-                res.json({token});
+                res.json({ token });
             });
         else res.status(401).send(`NFT not owned. acquire token ${nft} for access.`)
     });
@@ -88,4 +88,4 @@ function parseToken(req, res, next) {
     } else res.sendStatus(403);
 }
 
-app.listen(3005, () => console.log('Listening on port 3005...'));
+app.listen(3004, () => console.log('Listening on port 3005...'));
