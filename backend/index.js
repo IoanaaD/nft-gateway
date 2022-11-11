@@ -31,8 +31,6 @@ let contract = undefined;
 //     contract = new web3.eth.Contract(abi, nft);
 // });
 
-console.log('abi');
-console.log(abi);
 
 contract = new web3.eth.Contract(abi, nft);
 

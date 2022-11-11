@@ -8,7 +8,6 @@ const NFTCollection = props => {
 
   const fetchNFTs = async () => {
     let nfts;
-    console.log("fetching nfts");
     const api_key = "CZTNDzFuwH91esYTaCdJcq83fjYzhTuj";
     const baseURL = `https://eth-goerli.g.alchemy.com/v2/${api_key}/getNFTs/`;
 

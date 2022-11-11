@@ -3,10 +3,19 @@
     height: 270px;
 }
 
+.nftCardContainer .nftAnimation{
+    width: 200px;
+    height: 270px !important;
+}
+
 .nftCardContainer {
     border: 2px solid;
     padding: 10px;
     margin: 10px;
     max-width: 300px;
     word-break: break-word;
+}
+
+model-viewer{
+    height:270px;
 }
